@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CountdownTimer</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{message}}</div>
+      <countdown-timer
+        ref="countdownRef"
+        :duration="10"
+        unit="s"
+        @end="listenEnd"
+        @stop="listenStop"
+      >
+        <template #header>
+          <span>头部内容</span>
+        </template>
+        <template #footer>
+          <span>尾内容</span>
+        </template>
+      </countdown-timer>
+      <div class="mb10">
+        <button @click="start">点击开始倒计时 {{ msg }}</button>
+      </div>
+      <div>
+        <button @click="stop">暂停开始倒计时</button>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="../dist/vue2-countdown-timer.umd.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "倒计时使用demo",
+          msg: "",
+        },
+        methods: {
+          listenStop() {
+            this.msg = "倒计时已暂停";
+          },
+          listenEnd() {
+            this.msg = "倒计时已结束";
+          },
+          start() {
+            this.$refs.countdownRef.start();
+          },
+          stop() {
+            this.$refs.countdownRef.stop();
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

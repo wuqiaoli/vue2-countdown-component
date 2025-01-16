@@ -1,24 +1,82 @@
-# vue-countdown-component
+# 基于 Vue2 简单的倒计时组件
 
-## Project setup
-```
-npm install
-```
+## 安装依赖
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+vue2-countdown-component
 ```
 
-### Compiles and minifies for production
+## 全局引入
+
 ```
-npm run build
+<CountdownTimer ref="countdownRef" :duration="10">
+  <template #header>
+    <span>头部插槽</span>
+  </template>
+  <template #footer>
+    <span>尾部插槽</span>
+  </template>
+</CountdownTimer>
+
+import CountdownTimer from "vue2-countdown-component";
+Vue.component("CountdownTimer", CountdownTimer);
+
 ```
 
-### Lints and fixes files
+## 按需引入
+
 ```
-npm run lint
+<CountdownTimer ref="countdownRef" :duration="10">
+  <template #header>
+    <span>头部插槽</span>
+  </template>
+  <template #footer>
+    <span>尾部插槽</span>
+  </template>
+</CountdownTimer>
+
+
+import CountdownTimer from "vue2-countdown-component";
+
+export default{
+  components:{
+    CountdownTimer
+  }
+}
+
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 参数
+
+```
+duration: {
+  type: Number,
+  required: true,
+  default: 60,
+}
+
+```
+
+## 事件
+
+| 序号 ｜事件 | 描述  |
+| ----------- | ----- | ---------- |
+| 1           | start | 开始倒计时 |
+| 2           | end   | 倒计时结束 |
+| 3           | stop  | 倒计时暂停 |
+
+## 事件调用方法
+
+```
+ this.$refs.[ref].start(); // 开始
+ this.$refs.[ref].stop(); // 暂停
+
+```
+
+## 监听
+
+```
+<countdown-timer ref="countdownRef" :duration="10"
+@end="listenEnd" @stop="listenStop" >
+</countdown-timer>
+```

@@ -1,43 +1,40 @@
 {
-  "name": "vue-countdown-component",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue2-countdown-component",
+  "version": "1.0.0",
+  "description": "A Simple countdown component based on vue2",
+  "main": "dist/vue2-countdown-timer.umd.js",
+  "module": "dist/vue2-countdown-timer.esm.js",
+  "author": "wuqiaoli <1552044904wql@gmail.com>",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue2-countdown-timer src/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
   },
+  "keywords": [
+    "vue2",
+    "count",
+    "time",
+    "count-down",
+    "vue-countdown-component",
+    "vue-countdown",
+    "CountdownTimer"
+  ],
   "devDependencies": {
     "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
     "vue-template-compiler": "^2.6.14"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "license": "MIT"
 }
