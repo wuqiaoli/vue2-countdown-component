@@ -36,5 +36,10 @@
     "last 2 versions",
     "not dead"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wuqiaoli/vue2-countdown-component.git"
+  },
+  "homepage": "https://github.com/wuqiaoli/vue2-countdown-component/blob/main/README.md",
   "license": "MIT"
 }
