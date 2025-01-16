@@ -1,6 +1,6 @@
 {
   "name": "vue2-countdown-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Simple countdown component based on vue2",
   "main": "dist/vue2-countdown-timer.umd.js",
   "module": "dist/vue2-countdown-timer.esm.js",
