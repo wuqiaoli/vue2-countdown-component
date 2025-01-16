@@ -59,11 +59,11 @@ duration: {
 
 ## 事件
 
-| 序号 ｜事件 | 描述  |
-| ----------- | ----- | ---------- |
-| 1           | start | 开始倒计时 |
-| 2           | end   | 倒计时结束 |
-| 3           | stop  | 倒计时暂停 |
+| 序号 | 事件  | 描述       |
+| ---- | ----- | ---------- |
+| 1    | start | 开始倒计时 |
+| 2    | end   | 倒计时结束 |
+| 3    | stop  | 倒计时暂停 |
 
 ## 事件调用方法
 
@@ -73,10 +73,17 @@ duration: {
 
 ```
 
-## 监听
+## 事件监听
 
 ```
 <countdown-timer ref="countdownRef" :duration="10"
 @end="listenEnd" @stop="listenStop" >
 </countdown-timer>
+
+listenStop() {
+  this.msg = "倒计时已暂停";
+},
+listenEnd() {
+  this.msg = "倒计时已结束";
+},
 ```
