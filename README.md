@@ -18,6 +18,7 @@ vue2-countdown-component
   </template>
 </CountdownTimer>
 
+// main.js
 import CountdownTimer from "vue2-countdown-component";
 Vue.component("CountdownTimer", CountdownTimer);
 ```
