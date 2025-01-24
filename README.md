@@ -3,7 +3,7 @@
 ## 安装依赖
 
 ```
-vue2-countdown-component
+npm install vue2-countdown-component
 ```
 
 ## 全局引入
